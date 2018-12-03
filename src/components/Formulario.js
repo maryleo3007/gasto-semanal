@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import PropTypes from 'prop-types';
 
  class FormularioGasto extends Component {
     nombreGastoRef = React.createRef();
@@ -12,8 +13,6 @@ import React,{Component} from 'react';
             nombre : this.nombreGastoRef.current.value,
             cantidad: this.cantidadGastoRef.current.value
         }
-
-        console.log(gastoObj);
         //enviar el formulario por medio de props
 
         this.props.crearGasto(gastoObj);
@@ -39,6 +38,10 @@ import React,{Component} from 'react';
             </form>
         );
     }
+}
+
+FormularioGasto.propTypes = {
+    crearGasto: PropTypes.func.isRequired
 }
 
 export default FormularioGasto;

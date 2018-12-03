@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import PropTypes from 'prop-types';
 
 class Gasto extends Component {
     
@@ -13,6 +14,11 @@ class Gasto extends Component {
             </li>
         );
     }
+}
+
+Gasto.propTypes = {
+    cantidad: PropTypes.string.isRequired,
+    nombre: PropTypes.string.isRequired
 }
 
 export default Gasto
